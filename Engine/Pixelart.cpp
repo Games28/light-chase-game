@@ -6,30 +6,33 @@ Pixelart::Pixelart(int in_x, int in_y)
 	loc.y = in_y;
 }
 
-void Pixelart::Update()
+void Pixelart::Update(Keyboard& kbd)
 {
-	loc.x = loc.x + vx;
-	loc.y = loc.y + vy;
+	
+
 	if (kbd.KeyIsPressed(VK_UP))
 	{
-		loc.y += 1;
-		vy += 1;
+		loc.y -= 1;
+		dir = Direction::UP;
 		
 	}
 	if (kbd.KeyIsPressed(VK_DOWN))
 	{
-		loc.y -= 1;
-		vy -= 1;
+		loc.y += 1;
+		dir = Direction::DOWN;
+		
 	}
 	if (kbd.KeyIsPressed(VK_LEFT))
 	{
 		loc.x -= 1;
-		vx -= 1;
+		dir = Direction::LEFT;
+		
 	}
 	if (kbd.KeyIsPressed(VK_RIGHT))
 	{
-		loc.y += 1;
-		vx += 1;
+		loc.x += 1;
+		dir = Direction::RIGHT;
+		
 	}
 	
 }

@@ -2,11 +2,12 @@
 #include "Graphics.h"
 #include "Location.h"
 #include "Keyboard.h"
+#include "Direction.h"
 class Pixelart
 {
 public:
 	Pixelart(int in_x, int in_y);
-	void Update();
+	void Update(Keyboard& kbd);
 	//felcon image code
 	void DrawFelconUp(Graphics& gfx);
 	void DrawFelconDown(Graphics& gfx);
@@ -14,6 +15,7 @@ public:
 	void DrawFelconRight(Graphics& gfx);
 
 private:
+	Direction dir;
 	Location loc;
 	Keyboard kbd;
 	int vx;

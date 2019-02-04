@@ -39,27 +39,30 @@ void Game::Go()
 
 void Game::UpdateModel()
 {
-	felcon.Update();
+	felcon.Update(wnd.kbd);
 }
 
 void Game::ComposeFrame()
 {
-	felcon.DrawFelconUp(gfx);
+	
 	if (wnd.kbd.KeyIsPressed(VK_UP))
 	{
 		felcon.DrawFelconUp(gfx);
 	}
-	if (wnd.kbd.KeyIsPressed(VK_DOWN))
+	else if(wnd.kbd.KeyIsPressed(VK_DOWN))
 	{
 		felcon.DrawFelconDown(gfx);
 	}
-	if (wnd.kbd.KeyIsPressed(VK_LEFT))
+	else if (wnd.kbd.KeyIsPressed(VK_LEFT))
 	{
 		felcon.DrawFelconLeft(gfx);
 	}
-	if (wnd.kbd.KeyIsPressed(VK_RIGHT))
+	else if (wnd.kbd.KeyIsPressed(VK_RIGHT))
 	{
 		felcon.DrawFelconRight(gfx);
 	}
-	
+	else
+	{
+		felcon.DrawFelconUp(gfx);
+	}
 }
