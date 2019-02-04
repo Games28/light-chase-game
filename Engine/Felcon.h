@@ -8,7 +8,9 @@ private:
 	class Trail
 	{
 	public:
+		void InitShip(const Location& in_loc);
 		void Inittrail();
+		const Location& GetLocation() const;
 
 	private:
 		Location loc;
@@ -24,6 +26,7 @@ public:
 private:
 	static constexpr Color lighttrailColor = Colors::Yellow;
 	static constexpr int LightTrailMax = 100;
-	Trail trials[LightTrailMax];
+	Trail trails[LightTrailMax];
 	int STrail = 1;
+	
 };

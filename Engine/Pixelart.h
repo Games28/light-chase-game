@@ -7,7 +7,6 @@ class Pixelart
 {
 public:
 	Pixelart(int in_x, int in_y);
-	void Update(Keyboard& kbd);
 	//felcon image code
 	void DrawFelconUp(Graphics& gfx);
 	void DrawFelconDown(Graphics& gfx);

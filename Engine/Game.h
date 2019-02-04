@@ -24,6 +24,8 @@
 #include "Mouse.h"
 #include "Graphics.h"
 #include "Pixelart.h"
+#include "Board.h"
+#include "Felcon.h"
 
 
 class Game
@@ -42,8 +44,11 @@ private:
 private:
 	MainWindow& wnd;
 	Graphics gfx;
-	Pixelart felcon;
+	Board brd;
+	Felcon felcon;
+	Location delta_loc = { 1,0 };
 	Direction dir;
+
 	/********************************/
 	/*  User Variables              */
 	/********************************/

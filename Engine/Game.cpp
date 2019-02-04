@@ -25,7 +25,7 @@ Game::Game( MainWindow& wnd )
 	:
 	wnd( wnd ),
 	gfx( wnd ),
-	felcon(300,200)
+	
 {
 }
 
@@ -39,31 +39,55 @@ void Game::Go()
 
 void Game::UpdateModel()
 {
-	felcon.Update(wnd.kbd);
+	if (wnd.kbd.KeyIsPressed(VK_UP))
+	{
+		delta_loc = { 0, -1 };
+		dir = Direction::UP;
+
+	}
+	if (wnd.kbd.KeyIsPressed(VK_DOWN))
+	{
+		delta_loc = { 0,1 };
+		dir = Direction::DOWN;
+
+	}
+	if (wnd.kbd.KeyIsPressed(VK_LEFT))
+	{
+		delta_loc = { -1,0 };
+		dir = Direction::LEFT;
+
+	}
+	if (wnd.kbd.KeyIsPressed(VK_RIGHT))
+	{
+		delta_loc = { 1,0 };
+		dir = Direction::RIGHT;
+
+	}
 }
 
 void Game::ComposeFrame()
 {
+	if ( == Direction::UP)
+		{
+			
+		}
 	
-	if (dir == Direction::UP)
+	
+	else if ( == Direction::DOWN)
 	{
-		felcon.DrawFelconUp(gfx);
+		
 	}
-	if (dir == Direction::DOWN)
+	else if ( == Direction::LEFT)
 	{
-		felcon.DrawFelconDown(gfx);
+		
 	}
-	if (dir == Direction::LEFT)
+	else if ( == Direction::RIGHT)
 	{
-		felcon.DrawFelconLeft(gfx);
-	}
-	if (dir == Direction::RIGHT)
-	{
-		felcon.DrawFelconRight(gfx);
+		
 	}
 	else
 	{
-		felcon.DrawFelconUp(gfx);
+		
 	}
 	
 }
