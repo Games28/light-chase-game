@@ -25,6 +25,7 @@
 #include "Graphics.h"
 #include "Pixelart.h"
 
+
 class Game
 {
 public:
@@ -42,6 +43,7 @@ private:
 	MainWindow& wnd;
 	Graphics gfx;
 	Pixelart felcon;
+	Direction dir;
 	/********************************/
 	/*  User Variables              */
 	/********************************/

@@ -45,19 +45,19 @@ void Game::UpdateModel()
 void Game::ComposeFrame()
 {
 	
-	if (wnd.kbd.KeyIsPressed(VK_UP))
+	if (dir == Direction::UP)
 	{
 		felcon.DrawFelconUp(gfx);
 	}
-	else if(wnd.kbd.KeyIsPressed(VK_DOWN))
+	if (dir == Direction::DOWN)
 	{
 		felcon.DrawFelconDown(gfx);
 	}
-	else if (wnd.kbd.KeyIsPressed(VK_LEFT))
+	if (dir == Direction::LEFT)
 	{
 		felcon.DrawFelconLeft(gfx);
 	}
-	else if (wnd.kbd.KeyIsPressed(VK_RIGHT))
+	if (dir == Direction::RIGHT)
 	{
 		felcon.DrawFelconRight(gfx);
 	}
@@ -65,4 +65,5 @@ void Game::ComposeFrame()
 	{
 		felcon.DrawFelconUp(gfx);
 	}
+	
 }
